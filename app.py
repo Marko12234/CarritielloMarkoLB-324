@@ -33,7 +33,7 @@ def index():
     return render_template("index.html", entries=entries)
 
 
-@app.route("/login", methods=["  GET", "POST"])
+@app.route("/login", methods=["GET", "POST"])
 def login():
     if request.method == "POST":
         user_password = request.form.get("password")
