@@ -25,6 +25,7 @@ entries = []
 @dataclass
 class Entry:
     content: str
+    happiness: str = ""
     timestamp: datetime = datetime.now()
 
 
@@ -33,7 +34,7 @@ def index():
     return render_template("index.html", entries=entries)
 
 
-@app.route("/login", methods=["  GET", "POST"])
+@app.route("/login", methods=["GET", "POST"])
 def login():
     if request.method == "POST":
         user_password = request.form.get("password")
@@ -56,8 +57,9 @@ def logout():
 @app.route("/add_entry", methods=["POST"])
 def add_entry():
     content = request.form.get("content")
+    happiness = request.form.get("happiness", "")
     if content:
-        entry = Entry(content=content)
+        entry = Entry(content=content, happiness=happiness)
         entries.append(entry)
     return redirect(url_for("index"))
 
