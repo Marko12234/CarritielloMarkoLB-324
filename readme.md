@@ -1,7 +1,7 @@
 # LB 324
 
 ## Aufgabe 2
-
+<!-- test ci workflow -->
 Um die Automatisierungen zu aktivieren, muss man folgende Befehle einmalig nach dem Klonen des Repositories ausgeführen:
 
     pip install -r requirements.txt
